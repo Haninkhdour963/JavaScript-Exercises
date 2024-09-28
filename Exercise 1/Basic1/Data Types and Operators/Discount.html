@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discount</title>
+</head>
+<body>
+    <h1>Discount  </h1>
+    <input id="price" type="number" placeholder="Input  price" title="Input price"><br>
+    <input id="discount" type="number" placeholder="Input discount" title="Input  discount"><br>
+   
+    <button id="Discount">Discount</button><br>
+    <p id="result"></p>
+</div>
+
+
+<script> 
+   document.getElementById('Discount').addEventListener('click', function() {
+    const price=parseFloat(document.getElementById('price').value);
+    const discount=parseFloat(document.getElementById('discount').value);
+     if(isNaN(price)||isNaN(discount))
+     {
+        document.getElementById('result').innerText="error: price and discount not valid";
+     }
+     else{
+        const DiscountLast=price*discount;
+        const FinalPrice=price-DiscountLast;
+        document.getElementById('result').innerText =`Result: ${FinalPrice}`;
+    }});
+</script>
+</body>
+</html>

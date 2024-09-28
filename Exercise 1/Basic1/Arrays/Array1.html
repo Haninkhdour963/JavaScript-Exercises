@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array 1</title>
+    <div id="container">
+        <p id="p1"></p>
+        <p id="p2"></p>
+        <p id="p3"></p>
+        <p id="p4"></p>
+        <p id="p5"></p>
+        <p id="p6"></p>
+      
+</head>
+<body>
+    
+
+
+    <script>
+        const arr1=["Coding","Academy","By","Orange"];
+        arr1.push("Jordan");
+        document.getElementById("p1").innerText=`${arr1}`;
+
+    
+        arr1.pop("Jordan");
+        arr1.pop("Orange");
+        arr1.pop("By");
+        document.getElementById("p2").innerText=`${arr1}`;
+
+        arr1.push("By");
+        arr1.push("Orange");
+        document.getElementById("p3").innerText=`${arr1}`;
+
+         
+        document.getElementById("p4").innerText=`${'" Coding Academy By Orange "'}`;
+
+        arr1.push("Jordan");
+        document.getElementById("p5").innerText=`${arr1}`;
+
+        arr1.pop("Academy");
+        arr1.pop("By");
+        arr1.pop("Jordan");
+        arr1.pop("Orange");
+        arr1.push("Orange");
+        document.getElementById("p6").innerText=`${arr1}`;
+
+      
+
+
+
+        
+
+    </script>
+</body>
+</html>

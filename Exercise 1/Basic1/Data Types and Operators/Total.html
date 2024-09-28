@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic 1</title>
+</head>
+<body>
+    <div>
+        <h1>Total assets  </h1>
+        <input id="liabilities" type="number" title="Input liabilities"><br>
+        <input id="equity" type="number" title="Input equity"><br>
+        <button id="Total">Total</button><br>
+        <p id="result"></p>
+    </div>
+
+    
+
+
+    <script>
+        document.getElementById("Total").addEventListener("click",function(){
+
+           const liabilities = parseFloat(document.getElementById("liabilities").value); 
+            const equity = parseFloat(document.getElementById("equity").value); 
+            
+            if (isNaN (liabilities )||isNaN (equity)) {
+                document.getElementById('result').innerText = 'Error: Cannot calculate total asset'; 
+            } else {
+                const TotalLast = liabilities+equity;
+                document.getElementById('result').innerText = `Result: ${TotalLast}`; 
+            }
+        });
+
+
+
+        
+
+    </script>
+</body>
+</html>

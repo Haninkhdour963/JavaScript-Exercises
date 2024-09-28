@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age </title>
+</head>
+<body>
+    <h1>Age </h1>
+    <input id="myAge" type="number" placeholder="Input your Age" title="Input your Age"><br>
+    <button id="Age"> Age</button><br>
+    <p id="result"></p>
+
+    <script>
+        document.getElementById('Age').addEventListener('click', function() {
+            const myAge = parseInt(document.getElementById('myAge').value);
+
+            if (myAge > 18 && myAge < 30) {
+                document.getElementById('result').innerText = `Result: ${myAge} is in the range.`;
+            } else {
+                document.getElementById('result').innerText = "Error: Your age is not in the range (18-30).";
+            }
+        });
+    </script>
+</body>
+</html>

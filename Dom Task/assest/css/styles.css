@@ -1,0 +1,26 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.toolbar {
+    padding: 10px;
+    background: #f0f0f0;
+    border-bottom: 1px solid #ccc;
+}
+
+.notepad {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    overflow-y: auto;
+    height: calc(100vh - 50px); /* Adjust height */
+    outline: none; /* Remove outline */
+}

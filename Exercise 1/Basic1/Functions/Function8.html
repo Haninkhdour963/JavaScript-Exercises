@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Function 9</title>
+</head>
+<body>
+    <div id="container">
+        <input type="text" id="words" placeholder="Enter your text">
+        <input type="number" id="index" placeholder="Enter index to remove">
+        <button id="remove">Remove</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        document.getElementById("remove").addEventListener("click", function() {
+            const words = document.getElementById("words").value;
+            const index = parseInt(document.getElementById("index").value);
+
+            if (isNaN(index) || index < 0 || index >= words.length) {
+                document.getElementById("result").innerText = "Error: Index out of range.";
+            } else {
+                const newText = words.slice(0, index) + words.slice(index + 1);
+                document.getElementById("result").innerText = newText;
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function 11</title>
+</head>
+<body>
+    <div id="container">
+        <input type="text" id="words" placeholder="Enter your text">
+        <button id="convertArr">Convert to Array</button>
+        <p id="result"></p>
+    </div>
+    <script>
+        document.getElementById("convertArr").addEventListener("click", function() {
+            const words = document.getElementById("words").value;
+
+            if (words.trim() === "") {
+                document.getElementById("result").innerText = "Error: Please enter some words.";
+            } else {
+                const wordsArr = words.split(' ');
+                document.getElementById("result").innerText = `Converted to array: ${JSON.stringify(wordsArr)}`;
+            }
+        });
+    </script>
+</body>
+</html>

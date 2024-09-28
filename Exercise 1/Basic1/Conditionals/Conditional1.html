@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conditional 1</title>
+</head>
+<body>
+    <div id="container">
+        <input type="number" id="yearOfBirth" placeholder="Enter your year of birth">
+        <button id="check">Check </button>
+        <p id="result"></p>
+    </div>
+    <script>
+        document.getElementById("check").addEventListener("click", function() {
+            const yearOfBirth = parseInt(document.getElementById("yearOfBirth").value);
+            const currentYear = new Date().getFullYear();
+            const age = currentYear - yearOfBirth;
+
+            let eligibilityMessage;
+
+            switch (true) {
+                case (age < 18):
+                    eligibilityMessage = "You may join the kids' program.";
+                    break;
+                case (age >= 18 && age <= 30):
+                    eligibilityMessage = "You are eligible. Start your application.";
+                    break;
+                case (age > 30 && age <= 60):
+                    eligibilityMessage = "You are not eligible. You may join other programs.";
+                    break;
+                case (age > 60):
+                    eligibilityMessage = "You may join the seniors’ program.";
+                    break;
+                default:
+                    eligibilityMessage = "Error: Please enter a valid year of birth.";
+            }
+
+            document.getElementById("result").innerText = eligibilityMessage;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom Task</title>
+   <link rel="stylesheet" href="assest/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="toolbar">
+            <button onclick="formatText('bold')">Bold</button>
+            <button onclick="formatText('italic')">Italic</button>
+            <button onclick="setAlignment('left')">Left</button>
+            <button onclick="setAlignment('right')">Right</button>
+            <button onclick="formatText('uppercase')">Upper Case</button>
+            <button onclick="formatText('lowercase')">Lower Case</button>
+            <button onclick="formatText('capitalize')">Capitalize</button>
+            <button onclick="clearText()">Clear Text</button>
+            <input type="color" onchange="changeTextColor(this.value)" />
+            <input type="color" onchange="changeFillColor(this.value)" />
+            <select onchange="changeFontSize(this.value)">
+                <option value="">Font Size</option>
+                <option value="10px">10px</option>
+                <option value="16px">16px</option>
+                <option value="20px">20px</option>
+                <option value="24px">24px</option>
+                <option value="30px">30px</option>
+            </select>
+            <select onchange="changeFontFamily(this.value)">
+                <option value="">Font Family</option>
+                <option value="Arial">Arial</option>
+                <option value="Courier New">Courier New</option>
+                <option value="Georgia">Georgia</option>
+                <option value="Times New Roman">Times New Roman</option>
+                <option value="Verdana">Verdana</option>
+            </select>
+            <button onclick="printText()">Print Text</button>
+        </div>
+        <div id="notepad" contenteditable="true" class="notepad"></div>
+    </div>
+
+
+
+
+
+
+    <script src="assest/js/dom.js"></script>
+</body>
+</html>

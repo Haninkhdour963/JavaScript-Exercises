@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exponential </title>
+</head>
+<body>
+    <h1>Exponential </h1>
+    <input id="base" type="number" placeholder="Input Base number" title="Input Base number"><br>
+    <input id="exponent" type="number" placeholder="Input Exponent" title="Input Exponent number"><br>
+    <button id="exponential"> Exponential</button><br>
+    <p id="result"></p>
+
+    <script>
+        document.getElementById('exponential').addEventListener('click', function() {
+            const base = parseInt(document.getElementById('base').value);
+            const exponent = parseInt(document.getElementById('exponent').value);
+
+            if (isNaN(base) || isNaN(exponent)) {
+                document.getElementById('result').innerText = "Error: Base or Exponent not found.";
+            } else {
+                const exponentialLast = Math.pow(base, exponent); 
+                document.getElementById('result').innerText = `Result: ${exponentialLast}`;
+            }
+        });
+    </script>
+</body>
+</html>

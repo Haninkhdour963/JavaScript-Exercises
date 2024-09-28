@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function 9</title>
+</head>
+<body>
+    <div id="container">
+        <input type="text" id="words1" placeholder="Enter first text">
+        <input type="text" id="words2" placeholder="Enter second text">
+        <input type="number" id="index1" placeholder="Enter index to remove from first text">
+        <input type="number" id="index2" placeholder="Enter index to remove from second text">
+        <button id="merge">Merge</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        document.getElementById("merge").addEventListener("click", function() {
+            const words1 = document.getElementById("words1").value;
+            const words2 = document.getElementById("words2").value;
+            const index1 = parseInt(document.getElementById("index1").value);
+            const index2 = parseInt(document.getElementById("index2").value);
+
+            // Validate indices
+            if ((isNaN(index1) || index1 < 0 || index1 >= words1.length) ||
+                (isNaN(index2) || index2 < 0 || index2 >= words2.length)) {
+                document.getElementById("result").innerText = "Error: Index out of range.";
+            } else {
+                const newText1 = words1.slice(0, index1) + words1.slice(index1 + 1);
+                const newText2 = words2.slice(0, index2) + words2.slice(index2 + 1); 
+                const mergeTxt = newText1 + "" + newText2;
+                document.getElementById("result").innerText = `Merged text after removal: ${mergeTxt}`;
+            }
+        });
+    </script>
+</body>
+</html>

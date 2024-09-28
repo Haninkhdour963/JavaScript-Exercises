@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic 1</title>
+</head>
+<body>
+    
+
+    <div>
+        <h1>Net income </h1>
+        <input id="revenues" type="number" title="Input revenues"><br>
+        <input id="expenses" type="number" title="Input expenses"><br>
+        <button id="income">income</button><br>
+        <p id="result"></p>
+    </div>
+
+
+
+
+
+<script>  document.getElementById("income").addEventListener("click", function() {
+            const revenues = parseFloat(document.getElementById("revenues").value); 
+            const expenses = parseFloat(document.getElementById("expenses").value); 
+            
+            if (isNaN(revenues) || isNaN(expenses)) {
+                document.getElementById('result').innerText = 'Error: Please enter valid numbers.'; 
+            } else {
+                const netIncome = revenues - expenses;
+                document.getElementById('result').innerText = `Result: ${netIncome}`; 
+            }
+        });
+    </script>
+  
+      
+</body>
+</html>

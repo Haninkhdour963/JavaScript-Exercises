@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Net Income Calculator</title>
+</head>
+<body>
+    <div>
+        <h1>Net Income profit</h1>
+        <input id="profitMargin" type="number" title="Input Profit Margin"><br>
+        <input id="sales" type="number" title="Input Sales"><br>
+        <button id="calculateButton">Calculate Net Income</button><br>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        document.getElementById("calculateButton").addEventListener("click", function() {
+            const profitMargin = parseFloat(document.getElementById("profitMargin").value); 
+            const sales = parseFloat(document.getElementById("sales").value);
+            
+            if (isNaN(profitMargin) || isNaN(sales)) {
+                document.getElementById('result').innerText = "Error: Please enter valid numbers for both profit margin and sales.";
+            } else {
+                const netIncome = profitMargin * sales; 
+                document.getElementById('result').innerText = `Net Income: ${netIncome}`; 
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function 10</title>
+</head>
+<body>
+    <div id="container">
+        <input type="text" id="words" placeholder="Enter your text">
+        <button id="check">Check Character</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        document.getElementById("check").addEventListener("click", function() {
+            const words = document.getElementById("words").value;
+
+            
+            if (words.length === 0) {
+                document.getElementById("result").innerText = "Error: Please enter  text.";
+                return;
+            }
+
+            const result1 = (words.indexOf(words[0]) === words[0])? true : false;
+            const result2 = (words.lastIndexOf(words[words.length - 1]) === words.length - 1) ? true : false;
+            const resultlast=result1+" "+result2;
+
+
+            document.getElementById("result").innerText = resultlast; 
+        });
+    </script>
+</body>
+</html>

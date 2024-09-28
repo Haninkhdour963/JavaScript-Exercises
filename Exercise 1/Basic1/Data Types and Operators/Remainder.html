@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remainder </title>
+</head>
+<body>
+    <h1>Remainder </h1>
+    <input id="num1" type="number" placeholder="Input first number" title="Input first number"><br>
+    <input id="num2" type="number" placeholder="Input second number" title="Input second number"><br>
+    <button id="Remainder"> Remainder</button><br>
+    <p id="result"></p>
+
+    <script>
+        document.getElementById('Remainder').addEventListener('click', function() {
+            const num1 = parseInt(document.getElementById('num1').value);
+            const num2 = parseInt(document.getElementById('num2').value);
+
+            if (isNaN(num1) || isNaN(num2) || num2 === 0) {
+                document.getElementById('result').innerText = "Error: Please enter valid numbers and ensure the second number is not zero.";
+            } else {
+                const remainderLast = num1 % num2; 
+                document.getElementById('result').innerText = `Result: ${remainderLast} is the remainder.`;
+            }
+        });
+    </script>
+</body>
+</html>

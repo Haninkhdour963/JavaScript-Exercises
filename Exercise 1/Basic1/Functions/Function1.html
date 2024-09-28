@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function 1</title>
+</head>
+<body>
+    <div id="container">
+        <input id="word1" type="text" placeholder="Enter first word">
+        <input id="word2" type="text" placeholder="Enter second word">
+        <button id="array_str">Make as Array</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        document.getElementById("array_str").addEventListener("click", function() {
+            const word1 = document.getElementById("word1").value.trim();
+            const word2 = document.getElementById("word2").value.trim();
+
+           
+            if (word1 === "" || word2 === "") {
+                document.getElementById("result").innerText = "Error: Both words must be entered.";
+            } else {
+              
+                const combinedArray = [word1, word2];
+                document.getElementById("result").innerText = `Result for combining to words as array: ${combinedArray.join(", ")}`;
+            }
+        });
+    </script>
+</body>
+</html>

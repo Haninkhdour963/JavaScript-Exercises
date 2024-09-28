@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strings</title>
+</head>
+<body>
+    
+<div id="container">
+    <p id="p1"></p>
+    <p id="p2"></p>
+    <p id="p3"></p>
+    <p id="p4"></p>
+    <p id="p5"></p>
+    <p id="p6"></p>
+    <p id="p7"></p>
+
+</div>
+
+
+
+
+
+<script>
+    const p1 = "WELCOME TO ORANGE";
+    document.getElementById("p1").innerHTML = p1.toUpperCase();
+    
+    const p2 = "To";
+    document.getElementById("p2").innerHTML = p2.toUpperCase();
+    
+    const p3 = "Hello from Orange";
+    document.getElementById("p3").innerHTML = p3.replace("orange", "Orange");
+    
+
+    const p4= "WELCOME TO ORANGE";
+    document.getElementById("p4").innerHTML = p4.toLowerCase();
+
+    const p5= 17;
+    document.getElementById("p5").innerHTML = p5;
+
+    const p6= " Welcome to Orange" ;
+    document.getElementById("p6").innerHTML = p6.replace("Orange",'"Orange"');
+
+    const p7= "  Welcome to Orange Jordan " ;
+    document.getElementById("p7").innerHTML = p7.replace("Welcome to Orange Jordan","Welcome to Orange Jordan");
+
+
+    
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function 4</title>
+</head>
+<body>
+    <div id="container">
+        <input id="word1" type="text" placeholder="Enter word">
+        <button id="upper">Make as Uppercase</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        document.getElementById("upper").addEventListener("click", function() {
+            const word1 = document.getElementById("word1").value.trim();
+
+            if (word1 === "") {
+                document.getElementById("result").innerText = "Error: Word must be entered.";
+            } else {
+                const upperWord = word1.toUpperCase();
+                document.getElementById("result").innerText = `Result: ${upperWord}`;
+            }
+        });
+    </script>
+</body>
+</html>

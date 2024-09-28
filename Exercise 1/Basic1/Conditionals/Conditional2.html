@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conditional 2</title>
+</head>
+<body>
+    <div id="container">
+        <input type="text" id="words" placeholder="Enter your text">
+        <button id="convert">Convert</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        document.getElementById("convert").addEventListener("click", function() {
+            const words = document.getElementById("words").value; 
+
+            if (words.trim() === "") { 
+                document.getElementById("result").innerText = "Error: Please enter some words.";
+            } else {
+                const converted = words.split('').map(char =>
+                    char === char.toUpperCase() ? char.toLowerCase() : char.toUpperCase()
+                ).join('');
+                document.getElementById("result").innerText = converted; 
+            }
+        });
+    </script>
+</body>
+</html>

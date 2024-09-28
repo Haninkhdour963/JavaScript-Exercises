@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function 3</title>
+</head>
+<body>
+    <form action="" id="form">
+        <input type="email" name="myEmail" id="myEmail" maxlength="10" placeholder="Enter your email" required>
+        <button type="button" id="hidden">Hide email</button>
+        <p id="result"></p>
+    </form>
+
+    <script>
+        document.getElementById("hidden").addEventListener("click", function() {
+            const myEmail = document.getElementById("myEmail").value;
+
+            if (!myEmail) {
+                document.getElementById("result").innerText = "Error: your email not found";
+            } else {
+             
+                const hiddenEmail = myEmail.replace(/./g, '****');
+                document.getElementById("result").innerText = `Hidden Phone Number: ${hiddenEmail}`;
+            }
+        });
+    </script>
+</body>
+</html>

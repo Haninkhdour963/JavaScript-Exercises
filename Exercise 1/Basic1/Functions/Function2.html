@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function 2</title>
+</head>
+<body>
+    <form action="" id="form">
+        <input type="number" name="number_phone" id="numberphone" maxlength="10" placeholder="Enter phone number" required>
+        <button type="button" id="hidden">Hide Number</button>
+        <p id="result"></p>
+    </form>
+
+    <script>
+        document.getElementById("hidden").addEventListener("click", function() {
+            const numberphone = document.getElementById("numberphone").value;
+
+            if (!numberphone) {
+                document.getElementById("result").innerText = "Error: Phone number not found";
+            } else {
+             
+                const hiddenPhone = numberphone.replace(/\d/g, '*');
+                document.getElementById("result").innerText = `Hidden Phone Number: ${hiddenPhone}`;
+            }
+        });
+    </script>
+</body>
+</html>

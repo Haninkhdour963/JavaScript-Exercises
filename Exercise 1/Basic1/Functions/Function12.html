@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function 12</title>
+</head>
+<body>
+    <div id="container">
+        <input type="text" id="words" placeholder="Enter your text">
+        <button id="sort">Sort</button>
+        <p id="result"></p>
+    </div>
+    <script>
+        document.getElementById("sort").addEventListener("click", function() {
+            const words = document.getElementById("words").value;
+
+            if (words.trim() === "") {
+                document.getElementById("result").innerText = "Error: Please enter some words.";
+            } else {
+                const wordsSorted = words.split('').sort().join(''); 
+                                         
+                                          
+                document.getElementById("result").innerText = `Sorted characters: ${wordsSorted}`;
+            }
+        });
+    </script>
+</body>
+</html>
