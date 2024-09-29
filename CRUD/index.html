@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD Dashboard</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+</head>
+<body>
+    <div class="container mt-5">
+        <h3 class="mb-4">CRUD Application with Local Storage</h3>
+        <form action="" id="form" class="mb-4">
+            <div class="form-group">
+                <input type="text" id="fName" class="form-control" placeholder="Enter Name" required>
+            </div>
+            <div class="form-group">
+                <input type="number" id="age" class="form-control" placeholder="Enter Age" required>
+            </div>
+            <div class="form-group">
+                <input type="text" id="address" class="form-control" placeholder="Enter Address" required>
+            </div>
+            <div class="form-group">
+                <input type="email" id="email" class="form-control" placeholder="Enter Email" required>
+            </div>
+            <button type="submit" id="addData" class="btn btn-primary ">Add Data</button>
+        </form>
+        <table class="table table-bordered">
+            <thead class="thead-light">
+                <tr>
+                    <th id="myName">Name</th>
+                    <th id="myAge">Age</th>
+                    <th id="myAddress">Address</th>
+                    <th id="myEmail">Email</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Data will be inserted here -->
+                <tr>
+                    <td>John Doe</td>
+                    <td>30</td>
+                    <td>123 Main St</td>
+                    <td>john@example.com</td>
+                    <td>
+                        <button id="editData" class="btn btn-warning btn-sm">Edit</button>
+                        <button id="deleteData" class="btn btn-danger btn-sm">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
