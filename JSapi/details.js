@@ -1,31 +1,53 @@
-async function fetchPokemon() {
-    const response = await fetch('https://pokeapi.co/api/v2/pokemon?offset=20&limit=20');
-    const data = await response.json();
-    const pokemonContainer = document.getElementById('pokemon-container');
+async function fetchPokemonDetails() {
+    const id = getQueryParams();  
 
-    // Clear the container first
-    pokemonContainer.innerHTML = '';
+    try {
+        let api = `https://pokeapi.co/api/v2/pokemon/${id}`;
+        const response = await fetch(api, {
+            method: "GET",
+            headers: {
+                Accept: "application/json",
+                "Content-Type": "application/json",
+            }
+        });
 
-     const [index, pokemon] = data.results.entries();
-        const pokemonData = await fetch(pokemon.url);
-        const pokemonDetail = await pokemonData.json();
-        
-        const card = document.createElement('div');
-        card.classList.add('div');
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
 
-        card.innerHTML = `
-            <img src="${pokemonDetail.sprites.front_default}" alt="${pokemonDetail.name}">
-            <h3>${pokemonDetail.name}</h3>
-            <p>Types: ${pokemonDetail.types.map(type => type.type.name).join(', ')}</p>
-            <button class="btn" onclick="viewDetails(${index + 1})">View Details</button>
+        const data = await response.json();
+        const pokemonDetails = document.getElementById('pokemonDetails');
+
+        const types = data.types.map(type => type.type.name).join(', ');
+        const abilities = data.abilities.map(ability => ability.ability.name).join(', ');
+
+        let speciesResponse = await fetch(data.species.url);
+        let speciesData = await speciesResponse.json();
+        const speciesName = speciesData.genera.find(g => g.language.name === 'en').genus;
+        const nationalNumber = speciesData.id;
+        const localNumber = speciesData.pokedex_numbers.find(p => p.pokedex.name === 'national')?.entry_number || 'N/A';
+
+        pokemonDetails.innerHTML = `
+            <h2>${data.name.toUpperCase()} Details</h2>
+            <img src="${data.sprites.front_default}" alt="${data.name}" style="width:200px;height:200px;">
+            <p><strong>National Number:</strong> ${nationalNumber}</p>
+            <p><strong>Local Number:</strong> ${localNumber}</p>
+            <p><strong>Species:</strong> ${speciesName}</p>
+            <p><strong>Type:</strong> ${types}</p>
+            <p><strong>Height:</strong> ${data.height / 10} meters</p>
+            <p><strong>Weight:</strong> ${data.weight / 10} kg</p>
+            <p><strong>Abilities:</strong> ${abilities}</p>
         `;
-
-        pokemonContainer.appendChild(card);
+    } catch (error) {
+        console.error("Error fetching Pokémon details:", error);
+        document.getElementById('pokemonDetails').innerHTML = "Error fetching Pokémon details.";
     }
-
-
-function viewDetails(id) {
-    window.location.href = `pokemon-details.html?id=${id}`;
 }
 
-fetchPokemon();
+function getQueryParams() {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get('id');
+}
+
+// Ensure the DOM is fully loaded before executing
+document.addEventListener('DOMContentLoaded', fetchPokemonDetails);

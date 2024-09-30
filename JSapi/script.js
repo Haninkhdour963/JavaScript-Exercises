@@ -29,3 +29,4 @@ function viewDetails(id) {
 }
 
 fetchPokemon();
+

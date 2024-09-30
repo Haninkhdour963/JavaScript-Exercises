@@ -27,7 +27,9 @@ h3 {
     margin: 10px 0;
 }
 .btn{
-    background-color: #797b73; 
+    background-color: #a1cf16; 
+    border-radius: 30px;
+    height: 40px;
 }
 .btn:link, .btn:visited {
     background-color: #f44336;
@@ -40,13 +42,12 @@ h3 {
   
   .btn:hover, .btn:active {
     background-color: red;
+    border-radius: 30px;
   }
   
 
-  .pokemon {
+.pokemon-details {
     border: 1px solid #ccc;
-    padding: 10px;
-    margin: 10px;
+    padding: 20px;
     text-align: center;
-    cursor: pointer;
 }
