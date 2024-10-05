@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conditional 5</title>
+</head>
+<body>
+    <div id="container">
+        <input type="number" id="numberInput" placeholder="Enter a number">
+        <button id="checkButton">Check Even or Odd</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function isEven(num) {
+            return num % 2 === 0;
+        }
+
+        document.getElementById('checkButton').addEventListener('click', function() {
+            const number = parseInt(document.getElementById('numberInput').value); // Get the number input
+            let resultText;
+
+            if (isEven(number)) {
+                resultText = `${number} is even.`;
+            } else {
+                resultText = `${number} is odd.`;
+            }
+
+            document.getElementById('result').textContent = resultText; // Display the result
+        });
+    </script>
+</body>
+</html>

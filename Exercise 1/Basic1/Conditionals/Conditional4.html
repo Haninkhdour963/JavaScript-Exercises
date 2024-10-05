@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conditional 4</title>
+</head>
+<body>
+    <div id="container">
+        <input type="text" id="arrayInput" placeholder="Enter array elements (comma separated)">
+        <input type="text" id="elementToRemove" placeholder="Element to remove">
+        <button id="removeButton">Remove Element</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function removeElement(arr, elementToRemove) {
+            return arr.filter(item => item !== elementToRemove);
+        }
+
+        document.getElementById('removeButton').addEventListener('click', function() {
+            const arrayInput = document.getElementById('arrayInput').value; // Get the array input
+            const elementToRemove = document.getElementById('elementToRemove').value; // Get the element to remove
+            
+            // Convert the input string to an array
+            const inputArray = arrayInput.split(',').map(item => item.trim());
+
+            const result = removeElement(inputArray, elementToRemove); // Remove the element
+            document.getElementById('result').textContent = JSON.stringify(result); // Display the result
+        });
+    </script>
+</body>
+</html>

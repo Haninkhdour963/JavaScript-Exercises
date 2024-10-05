@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conditional 8</title>
+</head>
+<body>
+    <div id="container">
+        <input type="number" id="num1" placeholder="Enter first number">
+        <input type="number" id="num2" placeholder="Enter second number">
+        <input type="number" id="num3" placeholder="Enter third number">
+        <button id="checkTypeTriangle">Type of Triangle</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        document.getElementById("checkTypeTriangle").addEventListener("click", function() {
+            const num1 = parseFloat(document.getElementById("num1").value);
+            const num2 = parseFloat(document.getElementById("num2").value);
+            const num3 = parseFloat(document.getElementById("num3").value);
+            let resultText = "";
+
+            // Check for valid input
+            if (isNaN(num1) || isNaN(num2) || isNaN(num3)) {
+                resultText = "Error: Please enter three valid numbers.";
+            } else if (num1 + num2 <= num3 || num1 + num3 <= num2 || num2 + num3 <= num1) {
+                resultText = "Not a triangle";
+            } else if (num1 === num2 && num2 === num3) {
+                resultText = "Equilateral";
+            } else if (num1 === num2 || num2 === num3 || num1 === num3) {
+                resultText = "Isosceles";
+            } else {
+                resultText = "Scalene";
+            }
+
+            document.getElementById("result").innerText = resultText; // Display the result
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conditional 3</title>
+</head>
+<body>
+    <div id="container">
+        <input type="text" id="words" placeholder="Enter words here">
+        <button id="input">To CamelCase</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function toCamelCase(input) {
+            return input
+                .split(' ') // Split the string into words
+                .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()) // Capitalize first letter of each word
+                .join(''); // Join the words back into a single string without spaces
+        }
+
+        document.getElementById('input').addEventListener('click', function() {
+            const inputText = document.getElementById('words').value; // Get the input value
+            const camelCaseResult = toCamelCase(inputText); // Convert to CamelCase
+            document.getElementById('result').textContent = camelCaseResult; // Display the result
+        });
+    </script>
+</body>
+</html>

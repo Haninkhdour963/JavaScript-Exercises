@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conditional 10</title>
+</head>
+<body>
+    <div id="container">
+        <input type="number" id="num1" placeholder="Enter a year">
+        <button id="isLeapYear">Check Leap Year</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function isLeapYear(year) {
+            // Check if the year is divisible by 4
+            if (year % 4 === 0) {
+                // If it is divisible by 100, check if it is also divisible by 400
+                if (year % 100 === 0) {
+                    return year % 400 === 0; // If divisible by 400, it's a leap year
+                }
+                return true; // Divisible by 4 but not by 100, it's a leap year
+            }
+            return false; // Not divisible by 4, not a leap year
+        }
+
+        document.getElementById("isLeapYear").addEventListener("click", function() {
+            const year = parseInt(document.getElementById("num1").value); // Get user input
+
+            let resultText;
+            if (isNaN(year)) {
+                resultText = "Error: Please enter a valid year.";
+            } else {
+                if (isLeapYear(year)) {
+                    resultText = `${year} is a leap year.`;
+                } else {
+                    resultText = `${year} is not a leap year.`;
+                }
+            }
+
+            document.getElementById("result").innerText = resultText; // Display the result
+        });
+    </script>
+</body>
+</html>

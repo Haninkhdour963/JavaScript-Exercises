@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conditional 9</title>
+</head>
+<body>
+    <div id="container">
+        <input type="number" id="num1" placeholder="Enter number to check">
+        <input type="number" id="num2" placeholder="Enter minimum range">
+        <input type="number" id="num3" placeholder="Enter maximum range">
+        <button id="checkRange">Is In Range</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function isInRange(num, min, max) {
+            return num >= min && num <= max;
+        }
+
+        document.getElementById("checkRange").addEventListener("click", function() {
+            const numToCheck = parseFloat(document.getElementById("num1").value);
+            const minRange = parseFloat(document.getElementById("num2").value);
+            const maxRange = parseFloat(document.getElementById("num3").value);
+
+            let resultText;
+
+            // Check for valid input
+            if (isNaN(numToCheck) || isNaN(minRange) || isNaN(maxRange)) {
+                resultText = "Error: Please enter valid numbers.";
+            } else if (isInRange(numToCheck, minRange, maxRange)) {
+                resultText = `${numToCheck} is within the range of ${minRange} and ${maxRange}.`;
+            } else {
+                resultText = `${numToCheck} is outside the range of ${minRange} and ${maxRange}.`;
+            }
+
+            document.getElementById("result").innerText = resultText; // Display the result
+        });
+    </script>
+</body>
+</html>
